@@ -1,0 +1,7 @@
+
+Map editing:
+
+White:		ffffff
+Sea:		7b9ab9
+Borders: 	000000
+SeaBorders:	494d94

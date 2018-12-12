@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.canvas.Canvas?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="1207.0" xmlns="http://javafx.com/javafx/9.0.4" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MainController">
+   <top>
+      <VBox fx:id="fxMenuPanel" fillWidth="false" minWidth="-Infinity" prefHeight="69.0" prefWidth="1208.0" BorderPane.alignment="TOP_CENTER">
+         <children>
+            <Separator prefWidth="200.0" />
+            <HBox alignment="CENTER" minWidth="-Infinity" prefHeight="60.0" prefWidth="1204.0" spacing="15.0">
+               <children>
+                  <VBox alignment="CENTER" fillWidth="false" minWidth="-Infinity">
+                     <children>
+                        <Button mnemonicParsing="false" onAction="#fxMapLoad" prefHeight="29.0" prefWidth="281.0" text="Step 1: (Re-)load map" />
+                        <Button mnemonicParsing="false" onAction="#fxHighlightColours" prefHeight="25.0" prefWidth="281.0" text="Step 2 (optional): Highlight non-standard colours" />
+                     </children>
+                  </VBox>
+                  <Separator orientation="VERTICAL" prefHeight="200.0" />
+                  <VBox alignment="CENTER" fillWidth="false" minWidth="-Infinity" prefHeight="73.0" prefWidth="172.0">
+                     <children>
+                        <Button mnemonicParsing="false" onAction="#fxGenerateMap" prefHeight="25.0" prefWidth="146.0" text="Step 3: Generate Map" />
+                        <Button mnemonicParsing="false" onAction="#fxGenerateNeighbours" prefHeight="25.0" prefWidth="146.0" text="Step 4: Generate Neighbours" />
+                     </children>
+                  </VBox>
+                  <Separator orientation="VERTICAL" prefHeight="200.0" />
+                  <Button fx:id="fxEditPortsBtn" mnemonicParsing="false" onAction="#fxEditPorts" prefHeight="24.0" prefWidth="125.0" text="Step 5: Edit Ports" />
+                  <ComboBox fx:id="fxPortCombo" onAction="#fxPortSelect" prefWidth="150.0" promptText="Select port group" />
+                  <Separator orientation="VERTICAL" prefHeight="200.0" />
+                  <Button mnemonicParsing="false" onAction="#fxExport" prefHeight="51.0" prefWidth="146.0" text="Step 6: GENERATE SQL" />
+                  <Button mnemonicParsing="false" onAction="#fxLoadGenerated" prefHeight="25.0" prefWidth="146.0" text="Load generated map" />
+               </children>
+            </HBox>
+            <Separator maxWidth="1.7976931348623157E308" minWidth="-Infinity" prefHeight="13.0" prefWidth="1208.0" />
+         </children>
+      </VBox>
+   </top>
+   <bottom>
+      <VBox minHeight="-Infinity" minWidth="-Infinity" prefHeight="37.0" prefWidth="1208.0" BorderPane.alignment="CENTER">
+         <children>
+            <Separator prefWidth="200.0" />
+            <HBox alignment="CENTER_RIGHT" minHeight="-Infinity" minWidth="-Infinity" prefHeight="32.0" prefWidth="1208.0" spacing="15.0">
+               <children>
+                  <Label fx:id="fxDebug" prefHeight="26.0" prefWidth="526.0" text="No debug messages.">
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                  </Label>
+                  <Label text="Zoom level:">
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="fxZoomLevel" prefHeight="26.0" prefWidth="42.0" text="0">
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                  </Label>
+                  <Label text="X: ">
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="fxX" prefHeight="26.0" prefWidth="74.0" text="0">
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                  </Label>
+                  <Label text="Y:">
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="fxY" prefHeight="26.0" prefWidth="69.0" text="0">
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                  </Label>
+                  <Label text="Kamil Cupiał 2018 under Creative Commons License BY-NC-ND">
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                  </Label>
+               </children>
+               <padding>
+                  <Insets right="15.0" />
+               </padding>
+            </HBox>
+         </children>
+      </VBox>
+   </bottom>
+   <center>
+      <HBox fx:id="fxCanvasBox" alignment="CENTER" fillHeight="false" minHeight="-Infinity" minWidth="-Infinity" prefHeight="647.0" prefWidth="1208.0" style="-fx-background-color: #333333;" BorderPane.alignment="CENTER">
+         <children>
+            <Canvas fx:id="fxCanvas" height="542.0" width="953.0" HBox.hgrow="ALWAYS" />
+         </children>
+      </HBox>
+   </center>
+</BorderPane>
